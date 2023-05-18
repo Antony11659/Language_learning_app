@@ -1,0 +1,131 @@
+/*color #1ed75f*/
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+    background: #000;
+    overflow: hidden;	 
+}
+
+#container{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+	overflow: hidden;
+}
+
+#done{
+	display: none;	
+}
+
+#forDone{
+	position: absolute;
+	top: 30%;
+	right: 45%;
+	color: #1ed75f; 
+	font-size: 5rem;
+	font-family: 'Lemonada', cursive;
+	
+}
+
+#card{
+	display: flex;
+	flex-direction: column;
+	border: 1px solid ;
+	border-radius: 10px;
+	height: 60%;
+	width: 40%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    box-shadow: 0 0 10px white;
+    background: #fff;
+    color: black;
+	transition: .4s ease-out;
+}
+
+#card h2{
+	font-size: 2em;
+	text-decoration: underline;
+}
+
+#wrong h2{
+	font-size: 2em;
+}
+
+#wrong{
+	display: flex;
+	flex-direction: column;
+	border: 30px solid red;
+	border-radius: 10px;
+	height: 60%;
+	width: 40%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    box-shadow: 0 0 50px red;
+    background: #fff;
+    color: red;
+	transition: .4s ease-out;
+}
+
+
+#answer{
+	outline: none;
+	text-decoration: none;
+	border: 1px solid white;
+	border-radius: 10px;
+	background: #fff;
+	font-size: 1.5em;
+	height: 50px;
+	width: 40%;
+	padding-left: 1em;
+	font-family: 'Dancing Script', cursive;
+	padding-left: 1em;
+	color: black;
+    box-shadow: 1px 1px 10px white;
+}
+
+#letter {
+	font-family: 'Dancing Script', cursive;
+	font-size: 10em;
+}
+
+#character{
+	font-family: 'Ma Shan Zheng', cursive;
+	font-size: 15em;
+	font-weight: 100;
+}
+
+#longMemory {
+	position: absolute;
+	top: 10vh;
+	right: 20%;
+	color: white; 
+	font-size: 2rem;
+	border: 3px solid white;
+	border-radius: 25%;
+	padding: 20px 20px 20px 20px;
+	
+}
+
+#allWords{
+	position: absolute;
+	top: 10vh;
+	left: 20%;
+	color: white; 
+	font-size: 2rem;
+	border: 3px solid white;
+	border-radius: 25%;
+	padding: 20px 20px 20px 20px;
+}
+
+
+

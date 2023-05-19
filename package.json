@@ -1,0 +1,22 @@
+{
+  "name": "language_learning_app",
+  "version": "1.0.0",
+  "description": "App for learning languages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Antony11659/language_learning_app.git"
+  },
+  "keywords": [
+    "11659gry"
+  ],
+  "author": "Ant Shur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Antony11659/language_learning_app/issues"
+  },
+  "homepage": "https://github.com/Antony11659/language_learning_app#readme"
+}

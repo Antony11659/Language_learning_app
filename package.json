@@ -24,6 +24,10 @@
   },
   "homepage": "https://github.com/Antony11659/language_learning_app#readme",
   "dependencies": {
+    "axios": "^1.4.0",
     "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "nock": "^13.3.1"
   }
 }

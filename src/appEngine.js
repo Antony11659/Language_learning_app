@@ -1,6 +1,7 @@
 import nock from 'nock';
 import fs from 'fs';
 import axios from 'axios';
+import rl from 'readline-sync';
 
 const testURL = 'https://fakedb.com';
 nock(testURL).get('/').reply(200, async () => {
@@ -8,14 +9,32 @@ nock(testURL).get('/').reply(200, async () => {
   return data;
 });
 
-const ask = (url) => new Promise((resolve) => {
+const loadApp = (url) => new Promise((resolve) => {
     const data = axios.get(url);
     // const data = fs.promises.readFile('./words.js', 'utf-8');
     resolve(data);
-}).then((response) => console.log(response.data.data));
+}).then((response) => {
 
-ask(testURL);
+  ask(response.data.data)
+}).catch((err) => {
+    throw new Error(err)
+});
 
-const checkAnswer = () => {
-    // check user's answer
+const ask = (data) => {
+  const words = data;
+  const n = 0;
+  const phrase = words[n];
+  const question = rl.question(`${words[n].chinese}\n` );
+  return console.log(checkAnswer(phrase, question));
 };
+
+const checkAnswer = (phrase, answer) => {
+    const correctAnswer = phrase.english
+    const result = correctAnswer[0] === answer;
+    if (result) {
+      return `${answer} is correct!`
+    }
+    return `${answer} is wrong answer!`;
+};
+
+loadApp(testURL);

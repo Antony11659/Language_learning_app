@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/Antony11659/language_learning_app#readme",
   "dependencies": {
+    "@iamtraction/google-translate": "^2.0.1",
     "axios": "^1.4.0",
     "readline-sync": "^1.4.10"
   },

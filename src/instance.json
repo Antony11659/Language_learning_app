@@ -1,7 +1,4 @@
-{
-    "type": "phrase",
-    "part": "01",
-    "data": [
+
         {
         "chinese": "我爱你",
         "pinyin": "Wǒ ài nǐ",
@@ -9,6 +6,3 @@
         "count": 0,
         "id": 1
         }
-    ]
-    
-}

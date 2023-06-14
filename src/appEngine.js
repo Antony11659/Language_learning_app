@@ -1,5 +1,5 @@
-import nock from 'nock';
 import fs from 'fs';
+import nock from 'nock';
 import axios from 'axios';
 import rl from 'readline-sync';
 
@@ -31,7 +31,8 @@ const loadApp = (url) => new Promise((resolve) => {
   // const data = fs.promises.readFile('./words.js', 'utf-8');
   resolve(data);
 }).then((response) => {
-  ask(response.data.data);
+  console.log(response.data);
+  // ask(response.data.data);
 }).catch((err) => {
   throw new Error(err);
 });

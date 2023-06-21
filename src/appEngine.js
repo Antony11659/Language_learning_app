@@ -1,40 +1,32 @@
 import fs from 'fs';
-import nock from 'nock';
-import axios from 'axios';
+// import axios from 'axios';
 import rl from 'readline-sync';
 
-const testURL = 'https://fakedb.com';
-nock(testURL).get('/').reply(200, async () => {
-  const data = await fs.promises.readFile('./instance.json', 'utf-8');
+const getData = async (file) => {
+  const data = await fs.promises.readFile(file, 'utf-8');
   return data;
-});
+};
 
 const checkAnswer = (phrase, answer) => {
-  const correctAnswer = phrase.english;
-  const result = correctAnswer[0] === answer;
-  if (result) {
-    return `${answer} is correct!`;
+  if (phrase.english === answer) {
+    return 'good answer';
   }
-  return `${answer} is wrong answer!`;
+  return `wrong answer  write answer: ${phrase.english}`;
 };
 
-const ask = (data) => {
-  const words = data;
-  const n = 0;
-  const phrase = words[n];
-  const question = rl.question(`${words[n].chinese}\n`);
-  return console.log(checkAnswer(phrase, question));
+const ask = (phrases) => {
+  const i = 3;
+  const phrase = phrases[i];
+  const question = phrase.chinese;
+  const answer = rl.question(question);
+  const result = checkAnswer(phrase, answer);
+  console.log(result);
 };
 
-const loadApp = (url) => new Promise((resolve) => {
-  const data = axios.get(url);
-  // const data = fs.promises.readFile('./words.js', 'utf-8');
-  resolve(data);
-}).then((response) => {
-  console.log(response.data);
-  // ask(response.data.data);
-}).catch((err) => {
-  throw new Error(err);
-});
+const loadData = async (url) => {
+  const data = await getData(url);
+  const phrases = JSON.parse(data);
+  ask(phrases);
+};
 
-loadApp(testURL);
+loadData('../__fixtures__/phrases1.txt');
